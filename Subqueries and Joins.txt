@@ -68,3 +68,12 @@ join Employees as m on m.EmployeeID = e.ManagerID
 where e.ManagerID in (3, 7)
 order by e.EmployeeID
 
+select top 50 
+e.EmployeeID, e.FirstName + ' ' + e.LastName as EmployeeName, 
+m.FirstName + ' ' + m.LastName as ManagerName, 
+d.[Name] as DepartmentName
+from Employees e
+join Employees m on m.EmployeeID = e.ManagerID
+join Departments d on d.DepartmentID = e.DepartmentID
+order by e.EmployeeID
+
