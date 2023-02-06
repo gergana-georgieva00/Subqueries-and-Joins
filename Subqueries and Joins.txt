@@ -62,3 +62,9 @@ join EmployeesProjects ep on ep.EmployeeID = e.EmployeeID
 join Projects p on p.ProjectID = ep.ProjectID
 where e.EmployeeID = 24
 
+select e.EmployeeID, e.FirstName, e.ManagerID, m.FirstName as [ManagerName]
+from Employees e
+join Employees as m on m.EmployeeID = e.ManagerID
+where e.ManagerID in (3, 7)
+order by e.EmployeeID
+
