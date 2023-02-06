@@ -35,3 +35,11 @@ left join EmployeesProjects ep on ep.EmployeeID = e.EmployeeID
 where ep.ProjectID is null
 order by EmployeeID
 
+select e.FirstName, e.LastName, e.HireDate, d.[Name] as DeptName
+from Employees e
+join Departments d
+on d.DepartmentID = e.DepartmentID
+where e.HireDate > '1-11-1999'
+	  and d.[Name] in ('Sales', 'Finance')
+order by e.HireDate
+
