@@ -1,0 +1,8 @@
+use SoftUni
+select top 5 
+e.EmployeeId, e.JobTitle, a.AddressID, a.AddressText
+from Employees  e
+inner join Addresses a
+on e.AddressID = a.AddressID
+order by e.AddressID asc
+
