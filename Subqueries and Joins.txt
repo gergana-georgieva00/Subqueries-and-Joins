@@ -6,3 +6,11 @@ inner join Addresses a
 on e.AddressID = a.AddressID
 order by e.AddressID asc
 
+select top 50
+e.FirstName, e.LastName, t.[Name] as [Town], a.AddressText
+from Employees e
+join Addresses a on a.AddressID = e.AddressID
+join Towns t on t.TownID = a.TownID
+order by FirstName,
+		 LastName
+		 
