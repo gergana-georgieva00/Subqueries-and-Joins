@@ -14,3 +14,9 @@ join Towns t on t.TownID = a.TownID
 order by FirstName,
 		 LastName
 		 
+select e.EmployeeID, e.FirstName, e.LastName, d.[Name] as DepartmentName
+from Employees e
+join Departments d on d.DepartmentID = e.DepartmentID
+where d.[Name] = 'Sales'
+order by EmployeeID
+
