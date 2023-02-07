@@ -96,3 +96,14 @@ where p.Elevation > 2835
 	  and c.CountryCode = 'BG'
 order by Elevation desc
 
+select CountryCode, 
+	   count(MountainId)
+as MountainRanges
+from MountainsCountries
+where CountryCode in (
+						select CountryCode 
+						from Countries
+						where CountryName in ('United States', 'Russia', 'Bulgaria')
+					 )
+group by CountryCode
+
