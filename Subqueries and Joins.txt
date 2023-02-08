@@ -107,3 +107,14 @@ where CountryCode in (
 					 )
 group by CountryCode
 
+select top(5)
+	c.[CountryName],
+	r.[RiverName]
+from [Countries] as [c]
+LEFT JOIN [CountriesRivers] AS [cr]
+	on c.[CountryCode] = cr.[CountryCode]
+LEFT JOIN [Rivers] as [r]
+	on cr.[RiverId] = r.[Id]
+where c.[ContinentCode] = 'AF'
+order by c.[CountryName]
+
